@@ -1,0 +1,20 @@
+
+
+{
+
+	"models" : [
+
+		{
+			"name" : "ground",
+			"type" : "object"
+		},
+
+
+		{
+			"name" : "test",
+			"type" : "object"
+		}
+	]
+
+
+}
