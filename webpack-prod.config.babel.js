@@ -48,7 +48,7 @@
 		new webpack.optimize.UglifyJsPlugin({
       compress: { warnings: false }
     }),
-    new BundleAnalyzerPlugin()
+    // new BundleAnalyzerPlugin()
 	]
 
 
