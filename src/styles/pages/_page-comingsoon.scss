@@ -1,0 +1,146 @@
+		
+
+	/**
+	*
+	*	PAGE-COMINGSOON|CSS
+	* 	-------------------
+	*	DESC | Define page coming soon style
+	*	LOCATION | src > style > pages
+	*
+	*/
+
+
+	/*--------- VARIABLES ----------*/
+
+	
+
+
+	/*----------  STYLES  ----------*/
+	
+
+	&{
+		color: #fff;
+	}
+
+	
+	h1{
+		font-size: 17px;
+		font-weight: 700;
+		color: currentColor;
+		position: absolute;
+		top: 45px;
+		left: 60px;
+		letter-spacing: 0.05em;
+
+	} 
+
+
+	.comingsoon-content{
+	
+		
+		&{
+			text-align: center;
+		}
+
+		h2{
+			font-size: 125px;
+			font-weight: 700;
+			color: currentColor;
+		}
+
+
+		.links-nav{
+			
+			&{
+				width: 100%;
+				text-align: center;
+				margin-top: 80px;
+			}
+
+			&.ready .link{
+				opacity: 1;
+			}
+
+			.link{
+				
+				&{
+					display: inline-block;
+					vertical-align: middle;
+					position: relative;
+					opacity: 0;
+					animation: navFade 2s forewards;
+					transition: all 2s;
+					transition-delay: 2s;
+
+					a{
+						transition: all .3s;
+						font-size: 17px;
+						opacity: 0.2;
+						color: currentColor;
+						position: relative;
+						z-index: 30;
+
+						&:before{
+							position: absolute;
+							transition: all .3s;
+							z-index: 20;
+							width: 0;
+							height: 1px;
+							background: #fff;
+							bottom: -4px;
+							left: 0;
+							content: "";
+							transform: translate3d(0,0,0);
+						}
+					}
+					
+				}
+
+				&:hover a{ 
+					opacity: 1;
+
+					&:before{
+						width: 100%; 
+					}
+				}
+
+				&:nth-child(2){
+					margin: 0 120px;
+					position: relative;
+					transition-delay: 1s;
+
+					&::before,
+					&::after{
+						content: "";
+						position: absolute;
+						width: 70px;
+						height: 1px;
+						top: 50%;
+						opacity: 0.2;
+						background: #fff;
+					}
+
+					&::before{
+						left: -95px;
+					}
+
+					&::after{
+						right: -95px;
+					}
+
+				}				
+			}
+
+		}
+
+	}
+
+
+
+
+	
+
+
+
+
+
