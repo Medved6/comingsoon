@@ -18,7 +18,9 @@
 
 
 	import World from '@world/World'
-	import Field from '@components/ground/Ground'
+	import Ground from '@components/ground/Ground'
+	import BallCore from '@components/balls/BallCore'
+	import Soon from '@components/texts/Soon'
 	
 
 
@@ -37,8 +39,7 @@
 
 		constructor() {
 
-			console.log('%c init Interface','color: pink');
-
+			console.log('%c init Interface','color: pink; font-size: 16px; background-color: brown;');
 
 			this.init();
 
@@ -51,18 +52,25 @@
 			this.storeModels = new StoreModels();
 			this.storeModels.launch(this.create.bind(this));
 
+			//this.create();
+
 		}
 
 
 
 		create() {
 
-			console.log("%c CALLBACK","font-size: 24px")
-
+			// Init World
 			this.world = new World();
 			this.world.launch();
-			this.field = new Field();
 
+			// Init text soon
+			this.soon = new Soon();
+
+			// Init ball light
+			this.ballCore = new BallCore();
+			this.ballCore.launchAnim();
+			
 		}
 
 

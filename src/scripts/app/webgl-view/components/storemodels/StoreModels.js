@@ -26,7 +26,6 @@
 
 
 
-
 	class StoreModels {
 
 
@@ -39,6 +38,7 @@
 			if (StoreModels.instance) return StoreModels.instance;
 			else StoreModels.instance = this
 
+			console.log(MODELS);
 
 			this.items  = [];
 			this.toLoad = MODELS.models;
@@ -54,6 +54,7 @@
 		launch(callback) {
 
 			if( typeof callback != 'function') return
+			else if(this.length == 0) callback();
 
 
 			this.callback = callback;
@@ -88,6 +89,7 @@
 
 
 		getItems(name) {
+			if(!this.items[name]) return;
 			return this.items[name];
 		}
 

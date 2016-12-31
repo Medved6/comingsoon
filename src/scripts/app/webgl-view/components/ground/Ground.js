@@ -19,7 +19,6 @@
 
 
 
-
 	/*--------- REQUIRES ----------*/
 
 	const THREE = require('three');
@@ -49,18 +48,15 @@
 
 		init() {
 
-			this.Ground = this.models.getItems('ground')
+	
+			this.ground = this.models.getItems('ground')
+			
+			if(this.ground == undefined) return;
+
 			this.ticker = new Ticker()
 
-			const mesh = new THREE.Mesh(this.Ground.geom, new THREE.MeshNormalMaterial());
-			
+			const mesh = new THREE.Mesh(this.ground.geom, new THREE.MeshNormalMaterial());
 			this.world.scene.add(mesh)
-
-
-			this.ticker.tick('test',()=>{
-				mesh.rotation.y += 0.01
-			})
-
 
 
 		}

@@ -15,7 +15,7 @@
 	import $ from 'jquery'
 	import Config from './WorldConfig'
 	import Ticker from '@frameworks/Ticker'
-	import Viewport from '@frameworks/Viewport'
+	import Viewport from '@utils/WebglViewport'
 
 
 	import Renderer from './Renderer'
@@ -72,9 +72,20 @@
 			this.container = this.config.container;
 			this.container.append(this.renderer.domElement);
 			
-			// Add lights
-			this.lights = new LightManager();
-			this.scene.add(this.lights.treeGroup);
+			//Add lights
+			//this.lights = new LightManager();
+			//this.scene.add(this.lights.treeGroup);
+
+			window.addEventListener('resize',this.resize.bind(this));
+
+		}
+
+		resize() {
+   		 // Update camera
+    	this.camera.aspect = window.innerWidth / window.innerHeight;
+    	this.camera.updateProjectionMatrix();
+
+    	this.renderer.setSize( window.innerWidth, window.innerHeight);
 
 		}
 
@@ -83,7 +94,6 @@
 		launch() {
 			this.ticker.tick('render',this.loop.bind(this))
 		}
-
 
 
 		loop() {

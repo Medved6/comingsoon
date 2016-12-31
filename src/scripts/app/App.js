@@ -21,4 +21,9 @@
 
 
 
-	$(window).ready(()=>{ new WebglView(); })
+	$(window).ready(()=>{ 
+
+		let webglview = new WebglView(); 
+
+	})
+

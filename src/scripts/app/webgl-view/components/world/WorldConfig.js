@@ -44,7 +44,7 @@
 			position : {
 				x : 0,
 				y : 0,
-				z : 30
+				z : 200
 			},
 			target : new THREE.Vector3(0,0,0)
 		},
@@ -56,14 +56,18 @@
 			build : {
 				type : 'WebGLRenderer',
 				size : {
-					w : WIDTH,
+					w : WIDTH ,
 					h : HEIGHT
 				}
 			},
 			opts : {
-				alpha : true,
-				antialisaing : true
-			} 
+				color: 0x141415,
+				alpha : false,
+				antialisaing : true,
+				gammaInput : true,
+				gammaOutput : true
+			},
+
 		},
 
 

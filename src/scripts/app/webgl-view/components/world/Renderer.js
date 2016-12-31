@@ -34,18 +34,9 @@
 
 		create() {
 
-			this.instance = new THREE[this.params.build.type]( this.params.opt )
+			this.instance = new THREE[this.params.build.type]( this.params.opts )
 			this.instance.setSize(this.params.build.size.w,this.params.build.size.h)
 			this.instance.setPixelRatio(window.devicePixelRatio ? window.devicePixelRatio : 1)
-
-		}
-
-
-
-		resize() {
-
-
-
 
 		}
 
